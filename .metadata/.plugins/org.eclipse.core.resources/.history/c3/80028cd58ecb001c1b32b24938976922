@@ -1,0 +1,283 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
+public class calci {
+
+	private JFrame frame;
+	private JTextField textField;
+double first;
+double second;
+double result;
+String operation;
+String answer;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					calci window = new calci();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public calci() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 256, 323);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 11, 203, 58);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btn1 = new JButton("1");
+		btn1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			String number=textField.getText()+btn1.getText();
+			textField.setText(number);
+			
+			}
+		});
+		btn1.setBounds(10, 80, 43, 38);
+		btn1.setToolTipText("1");
+		btn1.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn1);
+		
+		JButton btn2 = new JButton("2");
+		btn2.setBounds(61, 80, 43, 38);
+		btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number=textField.getText()+btn2.getText();
+				textField.setText(number);
+			}
+		});
+		btn2.setToolTipText("2");
+		btn2.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn2);
+		
+		JButton btn3 = new JButton("3");
+		btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn3.getText();
+				textField.setText(number);
+			}
+		});
+		btn3.setBounds(114, 80, 43, 38);
+		btn3.setToolTipText("3");
+		btn3.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn3);
+		
+		JButton btn4 = new JButton("4");
+		btn4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn4.getText();
+				textField.setText(number);
+			}
+		});
+		btn4.setBounds(10, 135, 43, 38);
+		btn4.setToolTipText("4");
+		btn4.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn4);
+		
+		JButton btn5 = new JButton("5");
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn5.getText();
+				textField.setText(number);
+			}
+		});
+		btn5.setBounds(61, 135, 43, 38);
+		btn5.setToolTipText("5");
+		btn5.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn5);
+		
+		JButton btn6 = new JButton("6");
+		btn6.setBounds(114, 135, 43, 38);
+		btn6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn6.getText();
+				textField.setText(number);
+			}
+			
+		});
+		btn6.setToolTipText("6");
+		btn6.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn6);
+		
+		JButton btn7 = new JButton("7");
+		btn7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn7.getText();
+				textField.setText(number);
+			}
+		});
+		btn7.setBounds(10, 187, 43, 38);
+		btn7.setToolTipText("7");
+		btn7.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn7);
+		
+		JButton btn8 = new JButton("8");
+		btn8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn8.getText();
+				textField.setText(number);
+			}
+		});
+		btn8.setBounds(61, 187, 43, 38);
+		btn8.setToolTipText("8");
+		btn8.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn8);
+		
+		JButton btn9 = new JButton("9");
+		btn9.setBounds(114, 187, 43, 38);
+		btn9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn9.getText();
+				textField.setText(number);
+			}
+		});
+		btn9.setToolTipText("9");
+		btn9.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn9);
+		
+		JButton btn10 = new JButton("0");
+		btn10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn10.getText();
+				textField.setText(number);
+			}
+		});
+		btn10.setBounds(61, 235, 43, 39);
+		btn10.setToolTipText("0");
+		btn10.setFont(UIManager.getFont("Button.font"));
+		frame.getContentPane().add(btn10);
+		
+		JButton btnNewButton_1 = new JButton("-");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText(" ");
+				operation="-";
+			}
+		});
+		btnNewButton_1.setToolTipText("-");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_1.setBounds(179, 135, 43, 38);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnclear = new JButton("C");
+		btnclear.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnclear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+			}
+		});
+		btnclear.setToolTipText("C");
+		btnclear.setFont(UIManager.getFont("Button.font"));
+		btnclear.setBounds(10, 236, 43, 38);
+		frame.getContentPane().add(btnclear);
+		
+		JButton btnBackspace = new JButton("=");
+		btnBackspace.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String answer;
+				second=Double.parseDouble(textField.getText());
+				if(operation =="+")
+				{
+				result=first+second;
+				answer=String.format("%.2f",result);
+				textField.setText(answer);
+				}
+				
+				else if(operation =="-")
+				{
+				result=first-second;
+				answer=String.format("%.2f",result);
+				textField.setText(answer);
+				}
+				
+				else if(operation =="x")
+				{
+				result=first*second;
+				answer=String.format("%.2f",result);
+				textField.setText(answer);
+				}
+				else if(operation =="/")
+				{
+				result=first/second;
+				answer=String.format("%.2f",result);
+				textField.setText(answer);
+				}
+			}
+		});
+		btnBackspace.setToolTipText("=");
+		btnBackspace.setFont(UIManager.getFont("Button.font"));
+		btnBackspace.setBounds(114, 236, 43, 38);
+		frame.getContentPane().add(btnBackspace);
+		
+		JButton btnmulti = new JButton("x");
+		btnmulti.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText(" ");
+				operation="x";
+			}
+		});
+		btnmulti.setToolTipText("x");
+		btnmulti.setFont(UIManager.getFont("Button.font"));
+		btnmulti.setBounds(179, 187, 43, 38);
+		frame.getContentPane().add(btnmulti);
+		
+		JButton btnDivide = new JButton("/");
+		btnDivide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText(" ");
+				operation="/";
+			}
+		});
+		btnDivide.setToolTipText("/");
+		btnDivide.setFont(UIManager.getFont("Button.font"));
+		btnDivide.setBounds(179, 236, 43, 38);
+		frame.getContentPane().add(btnDivide);
+		
+		JButton btnPlus = new JButton("+");
+		btnPlus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText(" ");
+				operation="+";
+			}
+		});
+		btnPlus.setToolTipText("+");
+		btnPlus.setFont(UIManager.getFont("Button.font"));
+		btnPlus.setBounds(179, 80, 43, 38);
+		frame.getContentPane().add(btnPlus);
+	}
+}
